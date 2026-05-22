@@ -568,7 +568,6 @@
             color: #7b9ab0;
         }
 
-        /* ── تعليق توضيحي لمسار الصورة ── */
         .img-path-hint {
             display: block;
             font-size: 0.55rem;
@@ -580,7 +579,6 @@
             opacity: 0.7;
         }
 
-        /* ── فئات الرسوم المتحركة المخصصة ── */
         .anim-item {
             opacity: 0;
             animation-fill-mode: forwards;
@@ -1019,20 +1017,54 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 10: خطة التنفيذ  ══════════════════ -->
+                <!-- ══════════════════  شريحة 10: مرونة النظام وإمكانية التوسع ══════════════════ -->
                 <div class="slide" data-index="10">
+                    <div class="slide-section">
+                        <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-puzzle-piece icon-blue"></i> مرونة النظام وإمكانية التوسع (System Flexibility & Scalability)</h2>
+                        <div class="card-white anim-item anim-fadeInUp" data-delay="80">
+                            <p style="font-size:1.1rem; margin-bottom:16px;"><i class="fas fa-cubes" style="color:#0284c7;"></i> <strong>النظام غير مقيد بأدوات محددة:</strong> تم استخدام Jira وToggl Track في هذا المشروع <strong>كحالة تطبيقية ونموذج عملي</strong> فقط، ولكن جوهر النظام وبنية التصميم الأساسية صُممت لتكون مرنة وقابلة للتوسع الأفقي والرأسي.</p>
+                            <p class="anim-item anim-fadeInUp" data-delay="150"><i class="fas fa-plug" style="color:#0284c7;"></i> <strong>المبدأ التقني الأساسي:</strong> يعتمد التكامل على واجهات برمجة التطبيقات (REST APIs) القياسية. أي أداة تدعم API مفتوحة يمكن ربطها بالنظام دون الحاجة لإعادة بناء المنصة من الصفر، مما يضمن <strong>استمرارية الحل واستدامته</strong> في مختلف بيئات العمل.</p>
+                            <div class="highlight anim-item anim-slideInUp" data-delay="220" style="margin:16px 0;"> <i class="fas fa-sync-alt"></i> <strong>آلية الاستبدال والتوسع:</strong> البنية المعيارية (Modular Architecture) تسمح بإضافة أو استبدال أي أداة بأخرى مماثلة عبر تطوير "موائم" (Adapter) جديد، دون المساس ببقية مكونات النظام. </div>
+                        </div>
+                        <div class="grid-2" style="margin-top:12px;">
+                            <div class="card-white anim-item anim-fadeInLeft" data-delay="280">
+                                <h3><i class="fas fa-user-clock" style="color:#0284c7;"></i> أدوات تتبع الوقت المدعومة مستقبلاً</h3>
+                                <ul style="margin: 10px 20px; list-style-type: disc; line-height: 2;">
+                                    <li><strong>Jibble</strong> – لإدارة الحضور وتتبع الوقت</li>
+                                    <li><strong>Clockify</strong> – البديل المجاني الشامل</li>
+                                    <li><strong>Harvest</strong> – لتتبع الوقت وإصدار الفواتير</li>
+                                    <li><strong>Hubstaff</strong> – لفرق العمل عن بُعد</li>
+                                </ul>
+                            </div>
+                            <div class="card-white anim-item anim-fadeInRight" data-delay="350">
+                                <h3><i class="fas fa-tasks" style="color:#0284c7;"></i> أدوات إدارة المهام المدعومة مستقبلاً</h3>
+                                <ul style="margin: 10px 20px; list-style-type: disc; line-height: 2;">
+                                    <li><strong>Trello</strong> – لإدارة المشاريع بالبطاقات</li>
+                                    <li><strong>Asana</strong> – لتنسيق العمل الجماعي</li>
+                                    <li><strong>ClickUp</strong> – المنصة الشاملة للإنتاجية</li>
+                                    <li><strong>Monday.com</strong> – لإدارة سير العمل المرئي</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="anim-item anim-fadeInUp" data-delay="420" style="margin-top:16px; text-align:center;"><strong>النتيجة:</strong> المؤسسة ليست محصورة في أدوات معينة، بل تمتلك <strong>بنية تحتية مرنة</strong> تتكيف مع تغيرات السوق واحتياجاتها المستقبلية، مما يحمي استثمارها في النظام لسنوات قادمة.</p>
+                        <span class="source-ref">المصدر: مبدأ التصميم المعياري (Modular Design) مُستلهم من هندسة البرمجيات الموجهة بالخدمات (SOA) وMicroservices Architecture</span>
+                    </div>
+                </div>
+
+                <!-- ══════════════════  شريحة 11: خطة التنفيذ  ══════════════════ -->
+                <div class="slide" data-index="11">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-calendar-alt icon-blue"></i> خطة التنفيذ: 6 مراحل للتبني الكامل</h2>
                         <div class="table-wrap anim-item anim-fadeInUp" data-delay="80">
                             <table>
                                 <thead><tr><th>المرحلة</th><th>المدة</th><th>الأنشطة الرئيسية</th><th>المخرجات</th></tr></thead>
                                 <tbody>
-                                    <tr><td><strong>1. التقييم والاختيار</strong></td><td>أسبوع</td><td>إعداد API keys من Jira وToggl، تدقيق الأدوات، تحليل الفجوات</td><td>تقرير جاهزية التكامل</td></tr>
-                                    <tr><td><strong>2. التدريب وبناء الثقافة</strong></td><td>أسبوع</td><td>ورشة عمل للفريق عن ثقافة الوسوم (Tagging Culture)، التدريب على Toggl</td><td>فريق مدرّب وواعٍ</td></tr>
+                                    <tr><td><strong>1. التقييم والاختيار</strong></td><td>أسبوع</td><td>إعداد API keys من الأدوات، تدقيق الأدوات، تحليل الفجوات</td><td>تقرير جاهزية التكامل</td></tr>
+                                    <tr><td><strong>2. التدريب وبناء الثقافة</strong></td><td>أسبوع</td><td>ورشة عمل للفريق عن ثقافة الوسوم (Tagging Culture)، التدريب على الأدوات</td><td>فريق مدرّب وواعٍ</td></tr>
                                     <tr><td><strong>3. الإعداد التقني</strong></td><td>3 أيام</td><td>نشر منصة SIP (Node.js + MongoDB) على خادم سحابي، إعداد cron jobs</td><td>منصة SIP عاملة</td></tr>
                                     <tr><td><strong>4. التشغيل التجريبي</strong></td><td>أسبوعان</td><td>تشغيل النظام بالتوازي مع التقارير اليدوية، مقارنة النتائج</td><td>تقرير مقارنة الأداء</td></tr>
                                     <tr><td><strong>5. الإطلاق الكامل</strong></td><td>أسبوع</td><td>إيقاف التقارير اليدوية، اعتماد لوحة قيادة SIP رسميًا</td><td>تبنٍّ كامل للنظام</td></tr>
-                                    <tr><td><strong>6. التحسين المستمر</strong></td><td>مستمر</td><td>إضافة تكامل Slack، Power BI، تطوير تنبيهات ذكية</td><td>نظام متطور باستمرار</td></tr>
+                                    <tr><td><strong>6. التحسين المستمر</strong></td><td>مستمر</td><td>إضافة تكامل Slack، Power BI، وأدوات جديدة مثل Trello وJibble</td><td>نظام متطور باستمرار</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -1040,8 +1072,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 11: العائد على الاستثمار  ══════════════════ -->
-                <div class="slide" data-index="11">
+                <!-- ══════════════════  شريحة 12: العائد على الاستثمار  ══════════════════ -->
+                <div class="slide" data-index="12">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-coins icon-blue"></i> العائد على الاستثمار (ROI) – بالجنيه المصري</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1055,16 +1087,16 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 12: النموذج المقترح  ══════════════════ -->
-                <div class="slide" data-index="12">
+                <!-- ══════════════════  شريحة 13: النموذج المقترح  ══════════════════ -->
+                <div class="slide" data-index="13">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flask icon-blue"></i> منصة SIP – نموذج مقترح قيد البحث والتطوير</h2>
                         <div class="grid-2">
                             <div class="card-white anim-item anim-fadeInLeft" data-delay="60">
                                 <h3><i class="fas fa-layer-group" style="color:#0284c7; margin-left:8px;"></i> مكونات التصميم المقترح</h3>
                                 <ul style="margin: 10px 20px; list-style-type: disc; line-height: 2;">
-                                    <li><strong>موائم Jira API</strong> – لجلب تفاصيل المهام والتقديرات</li>
-                                    <li><strong>موائم Toggl API</strong> – لجلب سجلات الوقت الفعلية</li>
+                                    <li><strong>موائم API متعددة</strong> – لجلب تفاصيل المهام من أي أداة</li>
+                                    <li><strong>موائم Toggl/تتبع الوقت API</strong> – لجلب سجلات الوقت الفعلية</li>
                                     <li><strong>محرك المطابقة</strong> – مقارنة الوسوم وربط السجلات</li>
                                     <li><strong>جدولة دورية</strong> (Cron Job) – كل 60 دقيقة</li>
                                     <li><strong>قاعدة بيانات</strong> – تخزين المطابقات والسجلات</li>
@@ -1086,22 +1118,22 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 13: تحليل SWOT  ══════════════════ -->
-                <div class="slide" data-index="13">
+                <!-- ══════════════════  شريحة 14: تحليل SWOT  ══════════════════ -->
+                <div class="slide" data-index="14">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-balance-scale icon-blue"></i> تحليل SWOT لنموذج SIP</h2>
                         <div class="grid-2">
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="50" style="border-right:4px solid #27ae60;"><strong style="color:#27ae60;">نقاط القوة (Strengths):</strong><br>• تكلفة تشغيل منخفضة جدًا (~15$/شهر)<br>• دقة مطابقة 100% بدون أخطاء بشرية<br>• سهولة التطبيق خلال أسبوعين<br>• غير تدخلي – لا يعدل الأنظمة الأصلية<br>• قابل للتوسع الرأسي والأفقي</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="50" style="border-right:4px solid #27ae60;"><strong style="color:#27ae60;">نقاط القوة (Strengths):</strong><br>• تكلفة تشغيل منخفضة جدًا (~15$/شهر)<br>• دقة مطابقة 100% بدون أخطاء بشرية<br>• مرونة التوسع لأدوات متعددة<br>• غير تدخلي – لا يعدل الأنظمة الأصلية<br>• قابل للتوسع الرأسي والأفقي</div>
                             <div class="card-white anim-item anim-fadeInUp" data-delay="110" style="border-right:4px solid #e74c3c;"><strong style="color:#e74c3c;">نقاط الضعف (Weaknesses):</strong><br>• يعتمد على انضباط المستخدم في كتابة الوسوم<br>• التحديث كل ساعة (ليس لحظيًا Real-time)<br>• يحتاج اتصال إنترنت مستقر<br>• نطاق الاختبار محدود (فريق افتراضي)<br>• لا يشمل الفوترة أو الرواتب حاليًا</div>
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="170" style="border-right:4px solid #2ecc71;"><strong style="color:#2ecc71;">الفرص (Opportunities):</strong><br>• دمج الذكاء الاصطناعي للتنبؤ بتأخير المهام<br>• تحويله إلى منتج SaaS تجاري<br>• التوسع لدعم أدوات أخرى (Asana، Trello، ClickUp)<br>• تكامل مع أنظمة الفوترة (QuickBooks، Zoho)<br>• إضافة بوت Slack للتقارير التفاعلية</div>
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="230" style="border-right:4px solid #f39c12;"><strong style="color:#f39c12;">التهديدات (Threats):</strong><br>• تغيير سياسات APIs من Jira أو Toggl<br>• مقاومة ثقافة التتبع من الموظفين<br>• ظهور أدوات جاهزة تؤدي نفس الوظيفة<br>• مخاوف الخصوصية وإساءة استخدام بيانات الوقت<br>• تقادم تقنية Node.js/MongoDB مستقبلًا</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="170" style="border-right:4px solid #2ecc71;"><strong style="color:#2ecc71;">الفرص (Opportunities):</strong><br>• دمج الذكاء الاصطناعي للتنبؤ بتأخير المهام<br>• تحويله إلى منتج SaaS تجاري<br>• التوسع لدعم أدوات أخرى (Trello، Jibble، Asana)<br>• تكامل مع أنظمة الفوترة (QuickBooks، Zoho)<br>• إضافة بوت Slack للتقارير التفاعلية</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="230" style="border-right:4px solid #f39c12;"><strong style="color:#f39c12;">التهديدات (Threats):</strong><br>• تغيير سياسات APIs من الأدوات الخارجية<br>• مقاومة ثقافة التتبع من الموظفين<br>• ظهور أدوات جاهزة تؤدي نفس الوظيفة<br>• مخاوف الخصوصية وإساءة استخدام بيانات الوقت<br>• تقادم تقنية Node.js/MongoDB مستقبلًا</div>
                         </div>
                         <span class="source-ref">المصدر: تحليل SWOT وفق منهجية التخطيط الاستراتيجي – Harvard Business School Strategic Planning Framework</span>
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 14: دراسة حالة  ══════════════════ -->
-                <div class="slide" data-index="14">
+                <!-- ══════════════════  شريحة 15: دراسة حالة  ══════════════════ -->
+                <div class="slide" data-index="15">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-chalkboard-user icon-blue"></i> دراسة حالة: شركة برمجيات مصرية متوسطة (محاكاة)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1119,8 +1151,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 15: خارطة الطريق  ══════════════════ -->
-                <div class="slide" data-index="15">
+                <!-- ══════════════════  شريحة 16: خارطة الطريق  ══════════════════ -->
+                <div class="slide" data-index="16">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-road icon-blue"></i> خارطة طريق التبني المؤسسي (Roadmap تفصيلي)</h2>
                         <div class="grid-2">
@@ -1134,15 +1166,15 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 16: التوصيات  ══════════════════ -->
-                <div class="slide" data-index="16">
+                <!-- ══════════════════  شريحة 17: التوصيات  ══════════════════ -->
+                <div class="slide" data-index="17">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-lightbulb icon-blue"></i> التوصيات الاستراتيجية (مصفوفة stakeholders)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
                             <ul style="list-style-type: none; padding:0;">
-                                <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="100"><i class="fas fa-store" style="color:#0284c7;"></i> <strong>للمؤسسات الصغيرة والمتوسطة:</strong> ابدأوا فورًا بتطبيق <strong>ثقافة الوسم الموحد</strong> حتى قبل الأتمتة الكاملة. مجرد توحيد المعرفات بين Jira وToggl يدويًا يقلل الأخطاء بنسبة 40% (دراسة حالة من <strong>Atlassian Community 2022</strong>).</li>
+                                <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="100"><i class="fas fa-store" style="color:#0284c7;"></i> <strong>للمؤسسات الصغيرة والمتوسطة:</strong> ابدأوا فورًا بتطبيق <strong>ثقافة الوسم الموحد</strong> حتى قبل الأتمتة الكاملة. مجرد توحيد المعرفات بين الأدوات يقلل الأخطاء بنسبة 40% (دراسة حالة من <strong>Atlassian Community 2022</strong>).</li>
                                 <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="160"><i class="fas fa-building" style="color:#0284c7;"></i> <strong>للإدارة العليا:</strong> اعتماد <strong>سياسة الشفافية الزمنية</strong> كميزة تنافسية وليس كأداة رقابية. البيانات الدقيقة تمكن من تقديم عروض أسعار أكثر تنافسية للعملاء.</li>
-                                <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="220"><i class="fas fa-laptop-code" style="color:#0284c7;"></i> <strong>لفرق تقنية المعلومات:</strong> استخدام <strong>Webhooks</strong> بدلًا من الـ Polling الدوري للحصول على تحديثات فورية من Jira وToggl، مما يقلل الحمل على الشبكة.</li>
+                                <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="220"><i class="fas fa-laptop-code" style="color:#0284c7;"></i> <strong>لفرق تقنية المعلومات:</strong> استخدام <strong>Webhooks</strong> بدلًا من الـ Polling الدوري للحصول على تحديثات فورية من الأدوات، مما يقلل الحمل على الشبكة.</li>
                                 <li style="margin-bottom:12px;" class="anim-item anim-fadeInRight" data-delay="280"><i class="fas fa-users-cog" style="color:#0284c7;"></i> <strong>لإدارات الموارد البشرية:</strong> تصميم <strong>برامج تحفيز إيجابية</strong> للموظفين الملتزمين بدقة تتبع الوقت، وتجنب استخدام البيانات بشكل عقابي.</li>
                             </ul>
                             <span class="source-ref">المصدر: توصيات مبنية على أفضل ممارسات إدارة التغيير – Prosci ADKAR Model for Change Management</span>
@@ -1150,8 +1182,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 17: آفاق البحث  ══════════════════ -->
-                <div class="slide" data-index="17">
+                <!-- ══════════════════  شريحة 18: آفاق البحث  ══════════════════ -->
+                <div class="slide" data-index="18">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flask icon-blue"></i> آفاق البحث المستقبلية (Future Research Directions)</h2>
                         <div class="grid-2">
@@ -1164,22 +1196,22 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 18: خلاصة المشروع  ══════════════════ -->
-                <div class="slide" data-index="18">
+                <!-- ══════════════════  شريحة 19: خلاصة المشروع  ══════════════════ -->
+                <div class="slide" data-index="19">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flag-checkered icon-blue"></i> خلاصة المشروع: ما الذي أنجزناه؟</h2>
                         <div class="grid-2">
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="50"><strong>المشكلة:</strong> الفجوة بين إدارة المهام (Jira) وتتبع الوقت (Toggl) تؤدي إلى ضياع <strong>35+ ساعة/مدير سنويًا</strong> وأخطاء تصل إلى 15% في التقارير اليدوية.</div>
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="120"><strong>الحل المقترح:</strong> منصة SIP – تكامل ذكي عبر المعرف المشترك (Tagging) – منخفض التكلفة وسهل التطبيق خلال أسبوعين فقط، وهو مقترح بحثي لا يزال في طور الدراسة والتصميم.</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="50"><strong>المشكلة:</strong> الفجوة بين إدارة المهام وتتبع الوقت تؤدي إلى ضياع <strong>35+ ساعة/مدير سنويًا</strong> وأخطاء تصل إلى 15% في التقارير اليدوية.</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="120"><strong>الحل المقترح:</strong> منصة SIP – تكامل ذكي عبر المعرف المشترك (Tagging) – منخفض التكلفة وسهل التطبيق خلال أسبوعين فقط، مع قابلية التوسع لأي أدوات أخرى.</div>
                             <div class="card-white anim-item anim-fadeInUp" data-delay="190"><strong>النتائج المتوقعة:</strong> تقليل وقت التقارير من 42 دقيقة إلى <strong>3 ثوانٍ</strong>، دقة مطابقة 100%، وعائد استثماري يتجاوز <strong>5,500% سنويًا</strong> وفق التحليل النظري.</div>
-                            <div class="card-white anim-item anim-fadeInUp" data-delay="260"><strong>القابلية للتعميم:</strong> أي مؤسسة – برمجية، استشارية، تعليمية – يمكنها تطبيق النموذج والبدء في تحسين إنتاجيتها فور اكتمال التطوير.</div>
+                            <div class="card-white anim-item anim-fadeInUp" data-delay="260"><strong>القابلية للتعميم:</strong> أي مؤسسة – برمجية، استشارية، تعليمية – يمكنها تطبيق النموذج مع أدواتها المفضلة، مما يضمن استمرارية الحل وملاءمته لأي بيئة عمل.</div>
                         </div>
                         <p class="stat-number anim-item anim-bounceIn" data-delay="320" style="text-align:center; margin-top:16px;">الوقت هو أغلى مورد – استثمره بذكاء مع منصة SIP</p>
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 19: شكر وتقدير  ══════════════════ -->
-                <div class="slide" data-index="19">
+                <!-- ══════════════════  شريحة 20: شكر وتقدير  ══════════════════ -->
+                <div class="slide" data-index="20">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-heart icon-blue"></i> شكر وتقدير</h2>
                         <p style="font-size:1.2rem; text-align:center; margin-bottom:8px;" class="anim-item anim-fadeInUp" data-delay="50">الحمد لله الذي بنعمته تتم الصالحات، والصلاة والسلام على رسول الله.</p>
@@ -1197,28 +1229,22 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 20: فريق العمل (ترتيب تنازلي)  ══════════════════ -->
-                <div class="slide" data-index="20">
+                <!-- ══════════════════  شريحة 21: فريق العمل (ترتيب تنازلي)  ══════════════════ -->
+                <div class="slide" data-index="21">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-users icon-blue"></i> فريق العمل</h2>
                         <p style="text-align:center; margin-bottom:8px; font-weight:600;" class="anim-item anim-fadeInUp" data-delay="40">تحت إشراف: <strong>أ.م.د/ فوزي محمد هيكل</strong></p>
                         <p style="text-align:center; margin-bottom:16px; color:#6b8fa3;" class="anim-item anim-fadeInUp" data-delay="60">كلية تكنولوجيا الإدارة ونظم المعلومات – جامعة بورسعيد – العام الجامعي 2025/2026</p>
 
-                        <!-- ═══════════════════════════════════════════════ -->
-                        <!--  🖼️  فريق العمل – ترتيب تنازلي (18 ← 1)        -->
-                        <!-- ═══════════════════════════════════════════════ -->
                         <div class="team-grid">
-                            <!-- 18. مهاب أيمن محمد عبد السلام ═══ قائد الفريق ═══ -->
                             <div class="member-card leader anim-item anim-zoomIn" data-delay="40">
                                 <div class="member-img">
                                     <img src="./assets/مهاب ايمن.jpeg" alt="مهاب أيمن محمد عبد السلام" onerror="this.src='https://placehold.co/100x100?text=18'">
                                 </div>
-                                                                <div class="leader-badge"><i class="fas fa-crown"></i> قائد الفريق</div>
-
+                                <div class="leader-badge"><i class="fas fa-crown"></i> قائد الفريق</div>
                                 <div class="member-name">18. مهاب أيمن محمد عبد السلام</div>
                             </div>
 
-                            <!-- 17. مصطفى ياسر مصطفى الفار -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="70">
                                 <div class="member-img">
                                     <img src="./assets/مصطفى ياسر الفار.jpeg" alt="مصطفى ياسر مصطفى الفار" onerror="this.src='https://placehold.co/100x100?text=17'">
@@ -1226,7 +1252,6 @@
                                 <div class="member-name">17. مصطفى ياسر مصطفى الفار</div>
                             </div>
 
-                            <!-- 16. محمد محسن محمود الطنطاوي -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="100">
                                 <div class="member-img">
                                     <img src="./assets/طنطاوي.jpeg" alt="محمد محسن محمود الطنطاوي" onerror="this.src='https://placehold.co/100x100?text=16'">
@@ -1234,7 +1259,6 @@
                                 <div class="member-name">16. محمد محسن محمود الطنطاوي</div>
                             </div>
 
-                            <!-- 15. محمد ياسر حسن الحاج -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="130">
                                 <div class="member-img">
                                     <img src="./assets/محمد ياسر حسن.jpeg" alt="محمد ياسر حسن الحاج" onerror="this.src='https://placehold.co/100x100?text=15'">
@@ -1242,7 +1266,6 @@
                                 <div class="member-name">15. محمد ياسر حسن الحاج</div>
                             </div>
 
-                            <!-- 14. محمود خيري محسن -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="160">
                                 <div class="member-img">
                                     <img src="./assets/محمود خيري محسن محمد.jpeg" alt="محمود خيري محسن" onerror="this.src='https://placehold.co/100x100?text=14'">
@@ -1250,7 +1273,6 @@
                                 <div class="member-name">14. محمود خيري محسن</div>
                             </div>
 
-                            <!-- 13. محمد إيهاب محمد مصطفى بلبوله -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="190">
                                 <div class="member-img">
                                     <img src="./assets/محمد ايهاب مصطفي.jpeg" alt="محمد إيهاب محمد مصطفى بلبوله" onerror="this.src='https://placehold.co/100x100?text=13'">
@@ -1258,7 +1280,6 @@
                                 <div class="member-name">13. محمد إيهاب محمد مصطفى بلبوله</div>
                             </div>
 
-                            <!-- 12. محمد أحمد محمد العرباني -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="220">
                                 <div class="member-img">
                                     <img src="./assets/محمد أحمد العرباني.jpeg" alt="محمد أحمد محمد العرباني" onerror="this.src='https://placehold.co/100x100?text=12'">
@@ -1266,7 +1287,6 @@
                                 <div class="member-name">12. محمد أحمد محمد العرباني</div>
                             </div>
 
-                            <!-- 11. عمر محمد محمود العرباني -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="250">
                                 <div class="member-img">
                                     <img src="./assets/عمر محمد العرباني.jpeg" alt="عمر محمد محمود العرباني" onerror="this.src='https://placehold.co/100x100?text=11'">
@@ -1274,7 +1294,6 @@
                                 <div class="member-name">11. عمر محمد محمود العرباني</div>
                             </div>
 
-                            <!-- 10. علي السيد علي حموده -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="280">
                                 <div class="member-img">
                                     <img src="./assets/علي السيد حموده.jpeg" alt="علي السيد علي حموده" onerror="this.src='https://placehold.co/100x100?text=10'">
@@ -1282,7 +1301,6 @@
                                 <div class="member-name">10. علي السيد علي حموده</div>
                             </div>
 
-                            <!-- 9. زياد خالد بن الوليد -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="310">
                                 <div class="member-img">
                                     <img src="./assets/زياد خالد بن الوليد.jpeg" alt="زياد خالد بن الوليد" onerror="this.src='https://placehold.co/100x100?text=9'">
@@ -1290,7 +1308,6 @@
                                 <div class="member-name">9. زياد خالد بن الوليد</div>
                             </div>
 
-                            <!-- 8. رزيقي موريس جبره اسرافيل -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="340">
                                 <div class="member-img">
                                     <img src="./assets/رزيقي موريس جبره اسرافيل.jpeg" alt="رزيقي موريس جبره اسرافيل" onerror="this.src='https://placehold.co/100x100?text=8'">
@@ -1298,7 +1315,6 @@
                                 <div class="member-name">8. رزيقي موريس جبره اسرافيل</div>
                             </div>
 
-                            <!-- 7. رحمة وجدي حسن السيد محمد -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="370">
                                 <div class="member-img">
                                     <img src="./assets/رحمه وجدي حسن.jpeg" alt="رحمة وجدي حسن السيد محمد" onerror="this.src='https://placehold.co/100x100?text=7'">
@@ -1306,7 +1322,6 @@
                                 <div class="member-name">7. رحمة وجدي حسن السيد محمد</div>
                             </div>
 
-                            <!-- 6. حسين عبد الناصر عبد الواحد -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="400">
                                 <div class="member-img">
                                     <img src="./assets/حسين عبدالناصر عبدالواحد.jpeg" alt="حسين عبد الناصر عبد الواحد" onerror="this.src='https://placehold.co/100x100?text=6'">
@@ -1314,7 +1329,6 @@
                                 <div class="member-name">6. حسين عبد الناصر عبد الواحد</div>
                             </div>
 
-                            <!-- 5. حسام هاني فريد سليم -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="430">
                                 <div class="member-img">
                                     <img src="./assets/حسام هاني فريد.jpeg" alt="حسام هاني فريد سليم" onerror="this.src='https://placehold.co/100x100?text=5'">
@@ -1322,7 +1336,6 @@
                                 <div class="member-name">5. حسام هاني فريد سليم</div>
                             </div>
 
-                            <!-- 4. أيه حامد محمود حسنين أحمد -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="460">
                                 <div class="member-img">
                                     <img src="./assets/ايه حامد محمود.jpeg" alt="أيه حامد محمود حسنين أحمد" onerror="this.src='https://placehold.co/100x100?text=4'">
@@ -1330,7 +1343,6 @@
                                 <div class="member-name">4. أيه حامد محمود حسنين أحمد</div>
                             </div>
 
-                            <!-- 3. أحمد محمود محمد سليمان -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="490">
                                 <div class="member-img">
                                     <img src="./assets/أحمد محمود محمد.jpeg" alt="أحمد محمود محمد سليمان" onerror="this.src='https://placehold.co/100x100?text=3'">
@@ -1338,7 +1350,6 @@
                                 <div class="member-name">3. أحمد محمود محمد سليمان</div>
                             </div>
 
-                            <!-- 2. أحمد محمد نصر -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="520">
                                 <div class="member-img">
                                     <img src="./assets/احمد محمد نصر محمد عبده.jpeg" alt="أحمد محمد نصر" onerror="this.src='https://placehold.co/100x100?text=2'">
@@ -1346,7 +1357,6 @@
                                 <div class="member-name">2. أحمد محمد نصر</div>
                             </div>
 
-                            <!-- 1. أحمد عادل العشري -->
                             <div class="member-card anim-item anim-zoomIn" data-delay="550">
                                 <div class="member-img">
                                     <img src="./assets/احمد عادل العشري.jpeg" alt="أحمد عادل العشري" onerror="this.src='https://placehold.co/100x100?text=1'">
@@ -1354,8 +1364,6 @@
                                 <div class="member-name">1. أحمد عادل العشري</div>
                             </div>
                         </div>
-                        <!-- ══════════════════  نهاية فريق العمل  ══════════════════ -->
-
                         <p style="text-align:center; margin-top:24px; font-weight:700; color:#135b82;" class="anim-item anim-fadeInUp" data-delay="600">معًا نحو مستقبل أكثر ذكاءً وكفاءة</p>
                     </div>
                 </div>
@@ -1373,9 +1381,6 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
     </script>
     <script>
-        // ════════════════════════════════════════════
-        // 🧠  Particles.js – خلفية تكنولوجية متحركة
-        // ════════════════════════════════════════════
         particlesJS("particles-js", {
             "particles": {
                 "number": {
@@ -1465,29 +1470,19 @@
             "retina_detect": true
         });
 
-        // ════════════════════════════════════════════
-        // 🎬  نظام الرسوم المتحركة المخصص للشرائح
-        // ════════════════════════════════════════════
         function triggerAnimations(slideElement) {
             if (!slideElement) return;
             const animItems = slideElement.querySelectorAll('.anim-item');
             animItems.forEach(function(item) {
-                // إزالة كلاس triggered لإعادة التشغيل
                 item.classList.remove('triggered');
-                // فرض reflow
                 void item.offsetWidth;
-                // الحصول على التأخير
                 const delay = parseInt(item.getAttribute('data-delay')) || 0;
-                // إضافة التأخير ثم التشغيل
                 setTimeout(function() {
                     item.classList.add('triggered');
                 }, delay);
             });
         }
 
-        // ════════════════════════════════════════════
-        // 📖  نظام التنقل بين الشرائح
-        // ════════════════════════════════════════════
         const slides = document.querySelectorAll('.slide');
         let currentIndex = 0;
         const totalSlides = slides.length;
@@ -1498,7 +1493,6 @@
             slides.forEach((slide, idx) => {
                 if (idx === currentIndex) {
                     slide.classList.add('active');
-                    // تشغيل الرسوم المتحركة للشريحة المنشطة
                     triggerAnimations(slide);
                 } else {
                     slide.classList.remove('active');
@@ -1534,7 +1528,6 @@
                 prevSlide(); }
         });
 
-        // دعم اللمس (سحب) للتنقل
         let touchStartX = 0;
         let touchStartY = 0;
         const slidesContainer = document.querySelector('.slides-container');
@@ -1551,15 +1544,9 @@
             }
         });
 
-        // ════════════════════════════════════════════
-        // 🚀  التهيئة الأولية
-        // ════════════════════════════════════════════
         updateSlides();
-
-        // تهيئة WOW.js (تعمل في الخلفية للتوافق)
         new WOW({ live: false }).init();
-
-        console.log('✅ العرض التقديمي جاهز | ترتيب تنازلي للفريق | رسوم متحركة مخصصة مفعّلة');
+        console.log('✅ العرض التقديمي جاهز | شريحة المرونة مضافة | المحتوى متكامل');
     </script>
 </body>
 </html>
