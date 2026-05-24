@@ -196,6 +196,241 @@
             z-index: 5;
         }
 
+        /* ============ السلايد الافتتاحي المميز ============ */
+        .opening-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a1929 0%, #0d3b66 30%, #1a5276 60%, #0d3b66 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opening-slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(2, 132, 199, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.12) 0%, transparent 50%);
+            animation: rotateGradient 20s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .opening-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 40px 30px;
+        }
+
+        .opening-icon-container {
+            margin-bottom: 30px;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .opening-main-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(2, 132, 199, 0.4), 0 0 80px rgba(56, 189, 248, 0.2);
+            position: relative;
+        }
+
+        .opening-main-icon::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            animation: pulseRing 2s ease-out infinite;
+        }
+
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .opening-main-icon i {
+            font-size: 3.5rem;
+            color: white;
+            animation: pulseIcon 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .opening-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            text-shadow: 0 2px 20px rgba(2, 132, 199, 0.5);
+        }
+
+        .opening-title .highlight-text {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+
+        .opening-subtitle {
+            font-size: 1.3rem;
+            color: #bae6fd;
+            margin-bottom: 30px;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .opening-tags {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .opening-tag {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: #e0f2fe;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .opening-tag:nth-child(1) { animation-delay: 0.7s; }
+        .opening-tag:nth-child(2) { animation-delay: 0.9s; }
+        .opening-tag:nth-child(3) { animation-delay: 1.1s; }
+        .opening-tag:nth-child(4) { animation-delay: 1.3s; }
+
+        .opening-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+            margin: 25px auto;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+        }
+
+        .opening-scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1.5s forwards;
+        }
+
+        .opening-scroll-hint i {
+            animation: bounceDown 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-elem {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.08);
+            font-size: 3rem;
+        }
+
+        .floating-elem:nth-child(1) { top: 15%; left: 10%; animation: floatSlow 8s ease-in-out infinite; }
+        .floating-elem:nth-child(2) { top: 25%; right: 12%; animation: floatSlow 10s ease-in-out infinite 1s; }
+        .floating-elem:nth-child(3) { bottom: 20%; left: 15%; animation: floatSlow 9s ease-in-out infinite 2s; }
+        .floating-elem:nth-child(4) { bottom: 25%; right: 18%; animation: floatSlow 11s ease-in-out infinite 0.5s; }
+        .floating-elem:nth-child(5) { top: 40%; left: 50%; animation: floatSlow 7s ease-in-out infinite 1.5s; font-size: 2rem; }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.08; }
+            25% { transform: translate(10px, -10px) rotate(5deg); opacity: 0.15; }
+            50% { transform: translate(-5px, 15px) rotate(-3deg); opacity: 0.1; }
+            75% { transform: translate(-10px, -5px) rotate(2deg); opacity: 0.12; }
+        }
+
+        .opening-stats-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .opening-stat-item {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .opening-stat-item:nth-child(1) { animation-delay: 1s; }
+        .opening-stat-item:nth-child(2) { animation-delay: 1.2s; }
+        .opening-stat-item:nth-child(3) { animation-delay: 1.4s; }
+
+        .opening-stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #38bdf8;
+            display: block;
+        }
+
+        .opening-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        /* ============ باقي التنسيقات ============ */
         .slide::-webkit-scrollbar {
             width: 5px;
         }
@@ -276,9 +511,9 @@
             animation-fill-mode: forwards;
         }
         .card-white.visible {
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUpCard 0.6s ease-out forwards;
         }
-        @keyframes fadeInUp {
+        @keyframes fadeInUpCard {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -354,7 +589,7 @@
             animation-fill-mode: forwards;
         }
         .table-wrap.visible {
-            animation: fadeInUp 0.7s ease-out forwards;
+            animation: fadeInUpCard 0.7s ease-out forwards;
         }
         .team-grid {
             display: grid;
@@ -445,7 +680,7 @@
             animation-fill-mode: forwards;
         }
         .highlight.visible {
-            animation: fadeInUp 0.5s ease-out forwards;
+            animation: fadeInUpCard 0.5s ease-out forwards;
         }
         .source-ref {
             font-size: 0.72rem;
@@ -466,7 +701,7 @@
             animation-fill-mode: forwards;
         }
         .supervisor-card.visible {
-            animation: fadeInUp 0.7s ease-out forwards;
+            animation: fadeInUpCard 0.7s ease-out forwards;
         }
         .supervisor-img {
             width: 150px;
@@ -512,7 +747,7 @@
             animation-fill-mode: forwards;
         }
         .under-dev-banner.visible {
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUpCard 0.6s ease-out forwards;
         }
         .under-dev-banner i {
             color: #d97706;
@@ -534,13 +769,11 @@
             justify-content: center;
             gap: 28px;
             padding: 14px 0 18px;
-            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             border-top: 1px solid rgba(2, 132, 199, 0.2);
             flex-shrink: 0;
         }
         .arrow-btn {
-            background: #fff;
             border: none;
             width: 54px;
             height: 54px;
@@ -699,6 +932,16 @@
                 width: 120px;
                 height: 120px;
             }
+            .opening-title {
+                font-size: 2.2rem;
+            }
+            .opening-main-icon {
+                width: 100px;
+                height: 100px;
+            }
+            .opening-main-icon i {
+                font-size: 2.8rem;
+            }
         }
         @media (max-width: 1000px) {
             .team-grid {
@@ -723,6 +966,9 @@
             .supervisor-img {
                 width: 110px;
                 height: 110px;
+            }
+            .opening-title {
+                font-size: 1.8rem;
             }
         }
         @media (max-width: 750px) {
@@ -766,6 +1012,22 @@
             }
             .supervisor-name {
                 font-size: 1.2rem;
+            }
+            .opening-title {
+                font-size: 1.5rem;
+            }
+            .opening-main-icon {
+                width: 80px;
+                height: 80px;
+            }
+            .opening-main-icon i {
+                font-size: 2.2rem;
+            }
+            .opening-stats-row {
+                gap: 15px;
+            }
+            .opening-stat-value {
+                font-size: 1.5rem;
             }
         }
         @media (max-width: 500px) {
@@ -828,6 +1090,25 @@
             .img-path-hint {
                 font-size: 0.48rem;
             }
+            .opening-title {
+                font-size: 1.3rem;
+            }
+            .opening-subtitle {
+                font-size: 1rem;
+            }
+            .opening-tag {
+                font-size: 0.7rem;
+                padding: 6px 14px;
+            }
+            .opening-stats-row {
+                gap: 10px;
+            }
+            .opening-stat-value {
+                font-size: 1.3rem;
+            }
+            .opening-stat-label {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -848,8 +1129,55 @@
 
         <div class="slides-container">
             <div class="slides-wrapper" id="slidesWrapper">
-                <!-- ══════════════════  شريحة 0: جذور المشكلة  ══════════════════ -->
-                <div class="slide" data-index="0">
+                <!-- ══════════════════  شريحة 0: الافتتاحية  ══════════════════ -->
+                <div class="slide opening-slide active" data-index="0">
+                    <div class="floating-elements">
+                        <i class="fas fa-clock floating-elem"></i>
+                        <i class="fas fa-sync-alt floating-elem"></i>
+                        <i class="fas fa-chart-bar floating-elem"></i>
+                        <i class="fas fa-cogs floating-elem"></i>
+                        <i class="fas fa-rocket floating-elem"></i>
+                    </div>
+                    <div class="opening-content">
+                        <div class="opening-icon-container">
+                            <div class="opening-main-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <h1 class="opening-title">
+                            تكامل أنظمة تتبع الوقت<br>
+                            <span class="highlight-text">لتعزيز إنتاجية المؤسسة</span>
+                        </h1>
+                        <div class="opening-divider"></div>
+                        <p class="opening-subtitle">
+                            نظام ذكي لربط Jira Software مع Toggl Track
+                        </p>
+                        <div class="opening-tags">
+                            <span class="opening-tag"><i class="fas fa-robot" style="margin-left: 6px;"></i> أتمتة كاملة</span>
+                            <span class="opening-tag"><i class="fas fa-bolt" style="margin-left: 6px;"></i> كفاءة عالية</span>
+                            <span class="opening-tag"><i class="fas fa-chart-line" style="margin-left: 6px;"></i> تحليلات ذكية</span>
+                            <span class="opening-tag"><i class="fas fa-shield-alt" style="margin-left: 6px;"></i> تكامل آمن</span>
+                        </div>
+                        <div class="opening-stats-row">
+                            <div class="opening-stat-item">
+                                <span class="opening-stat-value">99.9%</span>
+                                <span class="opening-stat-label">توفير في الوقت</span>
+                            </div>
+                            <div class="opening-stat-item">
+                                <span class="opening-stat-value">0%</span>
+                                <span class="opening-stat-label">أخطاء بشرية</span>
+                            </div>
+                            <div class="opening-stat-item">
+                                <span class="opening-stat-value">5,500%</span>
+                                <span class="opening-stat-label">عائد استثماري</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ══════════════════  شريحة 1: جذور المشكلة  ══════════════════ -->
+                <div class="slide" data-index="1">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-question-circle icon-blue"></i> لماذا قمنا بهذا المشروع؟ (جذور المشكلة)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="100">
@@ -867,8 +1195,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 1: أهمية المشروع  ══════════════════ -->
-                <div class="slide" data-index="1">
+                <!-- ══════════════════  شريحة 2: أهمية المشروع  ══════════════════ -->
+                <div class="slide" data-index="2">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-chart-line icon-blue"></i> لماذا يجب أن نهتم؟ (الأهمية النظرية والتطبيقية)</h2>
                         <div class="grid-3">
@@ -895,8 +1223,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 2: الأهداف SMART  ══════════════════ -->
-                <div class="slide" data-index="2">
+                <!-- ══════════════════  شريحة 3: الأهداف SMART  ══════════════════ -->
+                <div class="slide" data-index="3">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-bullseye icon-blue"></i> أهداف المشروع وفق منهجية SMART</h2>
                         <div class="grid-2">
@@ -908,8 +1236,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 3: حدود المشروع  ══════════════════ -->
-                <div class="slide" data-index="3">
+                <!-- ══════════════════  شريحة 4: حدود المشروع  ══════════════════ -->
+                <div class="slide" data-index="4">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-border-all icon-blue"></i> نطاق وحدود المشروع (Scope & Limitations)</h2>
                         <div class="grid-2">
@@ -922,8 +1250,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 4: الإطار النظري  ══════════════════ -->
-                <div class="slide" data-index="4">
+                <!-- ══════════════════  شريحة 5: الإطار النظري  ══════════════════ -->
+                <div class="slide" data-index="5">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-chart-line icon-blue"></i> الإطار النظري: أربعة أجيال لتطور أنظمة تتبع الوقت</h2>
                         <div class="table-wrap anim-item anim-fadeInUp" data-delay="80">
@@ -942,8 +1270,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 5: الفكرة الأساسية  ══════════════════ -->
-                <div class="slide" data-index="5">
+                <!-- ══════════════════  شريحة 6: الفكرة الأساسية  ══════════════════ -->
+                <div class="slide" data-index="6">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-lightbulb icon-blue"></i> الفكرة الأساسية: المعرف المشترك (Unified Tagging Mechanism)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -956,8 +1284,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 6: آلية العمل  ══════════════════ -->
-                <div class="slide" data-index="6">
+                <!-- ══════════════════  شريحة 7: آلية العمل  ══════════════════ -->
+                <div class="slide" data-index="7">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-cogs icon-blue"></i> آلية العمل بالتفصيل: سيناريو عملي خطوة بخطوة</h2>
                         <div class="grid-2">
@@ -970,8 +1298,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 7: النتائج  ══════════════════ -->
-                <div class="slide" data-index="7">
+                <!-- ══════════════════  شريحة 8: النتائج  ══════════════════ -->
+                <div class="slide" data-index="8">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-chart-simple icon-blue"></i> النتائج المتوقعة: الأرقام تتحدث بوضوح</h2>
                         <div class="table-wrap anim-item anim-fadeInUp" data-delay="80">
@@ -990,8 +1318,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 8: تحليل النتائج  ══════════════════ -->
-                <div class="slide" data-index="8">
+                <!-- ══════════════════  شريحة 9: تحليل النتائج  ══════════════════ -->
+                <div class="slide" data-index="9">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-hourglass-half icon-blue"></i> تحليل النتائج: ماذا تعني هذه الأرقام عمليًا؟</h2>
                         <div class="grid-2">
@@ -1003,8 +1331,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 9: مؤشرات الأداء  ══════════════════ -->
-                <div class="slide" data-index="9">
+                <!-- ══════════════════  شريحة 10: مؤشرات الأداء  ══════════════════ -->
+                <div class="slide" data-index="10">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-tachometer-alt icon-blue"></i> مؤشرات الأداء الرئيسية (KPIs) بعد التكامل</h2>
                         <div class="grid-2">
@@ -1017,8 +1345,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 10: مرونة النظام وإمكانية التوسع ══════════════════ -->
-                <div class="slide" data-index="10">
+                <!-- ══════════════════  شريحة 11: مرونة النظام وإمكانية التوسع ══════════════════ -->
+                <div class="slide" data-index="11">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-puzzle-piece icon-blue"></i> مرونة النظام وإمكانية التوسع (System Flexibility & Scalability)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1051,8 +1379,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 11: خطة التنفيذ  ══════════════════ -->
-                <div class="slide" data-index="11">
+                <!-- ══════════════════  شريحة 12: خطة التنفيذ  ══════════════════ -->
+                <div class="slide" data-index="12">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-calendar-alt icon-blue"></i> خطة التنفيذ: 6 مراحل للتبني الكامل</h2>
                         <div class="table-wrap anim-item anim-fadeInUp" data-delay="80">
@@ -1072,8 +1400,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 12: العائد على الاستثمار  ══════════════════ -->
-                <div class="slide" data-index="12">
+                <!-- ══════════════════  شريحة 13: العائد على الاستثمار  ══════════════════ -->
+                <div class="slide" data-index="13">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-coins icon-blue"></i> العائد على الاستثمار (ROI) – بالجنيه المصري</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1087,8 +1415,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 13: النموذج المقترح  ══════════════════ -->
-                <div class="slide" data-index="13">
+                <!-- ══════════════════  شريحة 14: النموذج المقترح  ══════════════════ -->
+                <div class="slide" data-index="14">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flask icon-blue"></i> منصة SIP – نموذج مقترح قيد البحث والتطوير</h2>
                         <div class="grid-2">
@@ -1118,8 +1446,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 14: تحليل SWOT  ══════════════════ -->
-                <div class="slide" data-index="14">
+                <!-- ══════════════════  شريحة 15: تحليل SWOT  ══════════════════ -->
+                <div class="slide" data-index="15">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-balance-scale icon-blue"></i> تحليل SWOT لنموذج SIP</h2>
                         <div class="grid-2">
@@ -1132,8 +1460,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 15: دراسة حالة  ══════════════════ -->
-                <div class="slide" data-index="15">
+                <!-- ══════════════════  شريحة 16: دراسة حالة  ══════════════════ -->
+                <div class="slide" data-index="16">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-chalkboard-user icon-blue"></i> دراسة حالة: شركة برمجيات مصرية متوسطة (محاكاة)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1151,8 +1479,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 16: خارطة الطريق  ══════════════════ -->
-                <div class="slide" data-index="16">
+                <!-- ══════════════════  شريحة 17: خارطة الطريق  ══════════════════ -->
+                <div class="slide" data-index="17">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-road icon-blue"></i> خارطة طريق التبني المؤسسي (Roadmap تفصيلي)</h2>
                         <div class="grid-2">
@@ -1166,8 +1494,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 17: التوصيات  ══════════════════ -->
-                <div class="slide" data-index="17">
+                <!-- ══════════════════  شريحة 18: التوصيات  ══════════════════ -->
+                <div class="slide" data-index="18">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-lightbulb icon-blue"></i> التوصيات الاستراتيجية (مصفوفة stakeholders)</h2>
                         <div class="card-white anim-item anim-fadeInUp" data-delay="80">
@@ -1182,8 +1510,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 18: آفاق البحث  ══════════════════ -->
-                <div class="slide" data-index="18">
+                <!-- ══════════════════  شريحة 19: آفاق البحث  ══════════════════ -->
+                <div class="slide" data-index="19">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flask icon-blue"></i> آفاق البحث المستقبلية (Future Research Directions)</h2>
                         <div class="grid-2">
@@ -1196,8 +1524,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 19: خلاصة المشروع  ══════════════════ -->
-                <div class="slide" data-index="19">
+                <!-- ══════════════════  شريحة 20: خلاصة المشروع  ══════════════════ -->
+                <div class="slide" data-index="20">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-flag-checkered icon-blue"></i> خلاصة المشروع: ما الذي أنجزناه؟</h2>
                         <div class="grid-2">
@@ -1210,8 +1538,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 20: شكر وتقدير  ══════════════════ -->
-                <div class="slide" data-index="20">
+                <!-- ══════════════════  شريحة 21: شكر وتقدير  ══════════════════ -->
+                <div class="slide" data-index="21">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-heart icon-blue"></i> شكر وتقدير</h2>
                         <p style="font-size:1.2rem; text-align:center; margin-bottom:8px;" class="anim-item anim-fadeInUp" data-delay="50">الحمد لله الذي بنعمته تتم الصالحات، والصلاة والسلام على رسول الله.</p>
@@ -1229,8 +1557,8 @@
                     </div>
                 </div>
 
-                <!-- ══════════════════  شريحة 21: فريق العمل (ترتيب تنازلي)  ══════════════════ -->
-                <div class="slide" data-index="21">
+                <!-- ══════════════════  شريحة 22: فريق العمل (ترتيب تنازلي)  ══════════════════ -->
+                <div class="slide" data-index="22">
                     <div class="slide-section">
                         <h2 class="anim-item anim-fadeInRight" data-delay="0"><i class="fas fa-users icon-blue"></i> فريق العمل</h2>
                         <p style="text-align:center; margin-bottom:8px; font-weight:600;" class="anim-item anim-fadeInUp" data-delay="40">تحت إشراف: <strong>أ.م.د/ فوزي محمد هيكل</strong></p>
@@ -1546,7 +1874,7 @@
 
         updateSlides();
         new WOW({ live: false }).init();
-        console.log('✅ العرض التقديمي جاهز | شريحة المرونة مضافة | المحتوى متكامل');
+        console.log('✅ العرض التقديمي جاهز | السلايد الافتتاحي مُضاف | المحتوى متكامل');
     </script>
 </body>
 </html>
